@@ -1,0 +1,9 @@
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/stonks
+    username: stonks
+    password: stonks
+  flyway:
+    enabled: true
+stonks:
+  cron: '*/15 * * ? * *'

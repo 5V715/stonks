@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.13.0.xsd">
+    <jdbc>
+        <driver>org.postgresql.Driver</driver>
+        <url>jdbc:postgresql://localhost:5432/stonks</url>
+        <schema>public</schema>
+        <user>stonks</user>
+        <password>stonks</password>
+    </jdbc>
+    <generator>
+        <name>org.jooq.codegen.KotlinGenerator</name>
+        <database>
+            <name>org.jooq.meta.postgres.PostgresDatabase</name>
+            <schemata>
+                <schema>
+                    <inputSchema>public</inputSchema>
+                </schema>
+                <schema>
+                    <inputSchema>pg_catalog</inputSchema>
+                </schema>
+            </schemata>
+            <includes>public.*|pg_catalog.pg_advisory_xact_lock|pg_catalog.pg_try_advisory_lock|pg_catalog.pg_advisory_unlock</includes>
+            <excludes>flyway_schema_history</excludes>
+        </database>
+        <generate>
+            <routines>true</routines>
+            <deprecated>false</deprecated>
+        </generate>
+        <target>
+            <packageName>dev.silas.stonks.db.model</packageName>
+            <directory>src/main/kotlin</directory>
+            <encoding>UTF-8</encoding>
+        </target>
+    </generator>
+</configuration>
